@@ -34,7 +34,7 @@ public class BiensDao {
 				ps.setString(8, bien.getGarage());
 				ps.setString(9, bien.getDescription());
 				ps.setString(10, bien.getImage());
-				ps.setInt(1, bien.getPrix());
+				ps.setInt(11, bien.getPrix());
 				ps.executeUpdate();
 				set = true;
 			} catch (SQLException e) {

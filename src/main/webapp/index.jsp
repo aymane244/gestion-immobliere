@@ -26,15 +26,7 @@
 					Vous trouvrez les meilleurs offres
 				</p>
 			</div>
-			<%
-        		if(session.getAttribute("achat") != null){
-       		%>
-   			<div class='container alert alert-success text-center w-50' role='alert'>
-				<%= session.getAttribute("achat")%>
-			</div>
-			<%
-       			}
-			%>
+			
 			<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" style="position:relative">
   				<div class="carousel-inner">
     				<div class="carousel-item active">

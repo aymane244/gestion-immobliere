@@ -220,12 +220,12 @@ public class AchatDao {
 	}
 	public List <Achat> countTerrainsAll() {
 		List <Achat> achats = new ArrayList<>();
-		String sql ="SELECT achat_client, COUNT(achat_nom) from achat INNER JOIN biens ON achat.achat_bien=biens.bien_id WHERE bien_type='Terrain'";
+		String sql ="SELECT achat_client, COUNT(achat_id) from achat INNER JOIN biens ON achat.achat_bien=biens.bien_id WHERE bien_type='Terrain'";
 		try {
 			PreparedStatement ps = this.conn.prepareStatement(sql);
 			ResultSet result = ps.executeQuery();
 			while(result.next()) {
-				int count = result.getInt("COUNT(achat_nom)");
+				int count = result.getInt("COUNT(achat_id)");
 				achats.add(new Achat(count));
 			}
 		} catch (SQLException e) {
@@ -263,13 +263,13 @@ public class AchatDao {
 	}
 	public List <Achat> countCommercesAll() {
 		List <Achat> achats = new ArrayList<>();
-		String sql ="SELECT achat_client, COUNT(achat_nom) FROM achat INNER JOIN biens ON achat.achat_bien=biens.bien_id WHERE "
+		String sql ="SELECT achat_client, COUNT(achat_id) FROM achat INNER JOIN biens ON achat.achat_bien=biens.bien_id WHERE "
 				+ "bien_type='Bureaux & commerce'";
 		try {
 			PreparedStatement ps = this.conn.prepareStatement(sql);
 			ResultSet result = ps.executeQuery();
 			while(result.next()) {
-				int count = result.getInt("COUNT(achat_nom)");
+				int count = result.getInt("COUNT(achat_id)");
 				achats.add(new Achat(count));
 			}
 		} catch (SQLException e) {
